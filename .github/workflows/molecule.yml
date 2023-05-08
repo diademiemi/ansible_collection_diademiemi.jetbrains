@@ -1,0 +1,90 @@
+---
+name: Molecule Test
+
+"on":
+  push:
+    branches:
+      - main
+    paths:
+      - "roles/**"
+  workflow_dispatch:
+    inputs:
+      role:
+        description: 'Role to test'
+        required: true
+
+jobs:
+  find-molecule:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ env.matrix_output }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Get changed roles
+        id: changed-roles
+        uses: tj-actions/changed-files@v35
+        with:
+          path: "roles"
+          diff_relative: "true"
+          files: "**"
+          dir_names: "true"
+          dir_names_max_depth: "1"
+          since_last_remote_commit: "true"
+        
+      - name: Return roles that have molecule tests
+        id: matrix
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "matrix_output=[\"${{ github.event.inputs.role }}\"]" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          roles=""
+          for role in ${{ steps.changed-roles.outputs.all_changed_and_modified_files }}; do
+            echo "Checking $role"
+            if [ -f roles/$role/molecule/default/molecule.yml ]; then
+              echo "Found molecule.yml in $role"
+              if [ -z "$roles" ]; then
+                roles="\"$role\""
+              else
+                roles="$roles, \"$role\""
+              fi
+              echo DEBUG $roles
+            fi
+          done
+          echo DEBUG "matrix_output=[$roles]"
+          echo "matrix_output=[$roles]" >> "$GITHUB_ENV"
+          exit 0
+
+
+  molecule:
+    runs-on: ubuntu-latest
+    needs: 
+      - find-molecule
+    strategy:
+      matrix:
+        role: ${{ fromJson(needs.find-molecule.outputs.matrix) }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies.
+        working-directory: roles/${{ matrix.role }}
+        run: pip3 install -r requirements.txt
+
+      - name: Install Galaxy dependencies.
+        working-directory: roles/${{ matrix.role }}
+        run: ansible-galaxy collection install community.docker
+
+      - name: Run molecule
+        working-directory: roles/${{ matrix.role }}
+        run: "molecule test"
+
+...
