@@ -79,9 +79,12 @@ jobs:
         working-directory: roles/${{ matrix.role }}
         run: pip3 install -r requirements.txt
 
-      - name: Install Galaxy dependencies.
+      - name: Install Ansible dependencies.
+        run: ansible-galaxy install -r requirements.yml
+
+      - name: Install Ansible dependencies.
         working-directory: roles/${{ matrix.role }}
-        run: ansible-galaxy collection install community.docker
+        run: ansible-galaxy install -r requirements.yml
 
       - name: Run molecule
         working-directory: roles/${{ matrix.role }}
