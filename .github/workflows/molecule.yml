@@ -32,7 +32,7 @@ jobs:
           dir_names: "true"
           dir_names_max_depth: "1"
           since_last_remote_commit: "true"
-        
+
       - name: Return roles that have molecule tests
         id: matrix
         run: |
@@ -56,7 +56,6 @@ jobs:
           echo DEBUG "matrix_output=[$roles]"
           echo "matrix_output=[$roles]" >> "$GITHUB_ENV"
           exit 0
-
 
   molecule:
     runs-on: ubuntu-latest

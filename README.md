@@ -30,6 +30,8 @@ export NEW_ROLE_NAME="new_role"
 Using Template
 --------------
 To use this template for a new role, run
+
+
 ```bash
 export NEW_ROLE_NAME="NEW_NAME"
 export GITHUB_USER="diademiemi"
