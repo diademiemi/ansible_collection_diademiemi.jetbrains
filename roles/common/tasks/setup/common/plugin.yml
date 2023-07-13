@@ -16,6 +16,6 @@
   become: true
   become_user: "{{ jetbrains_common_plugins_user }}"
   ansible.builtin.unarchive:
-    src: "/tmp/{{ jetbrains_common_name }}-plugin-{{ pycharm_plugin }}.zip"
+    src: "/tmp/{{ jetbrains_common_name }}-plugin-{{ jetbrains_common_plugin }}.zip"
     dest: "{{ jetbrains_common_plugin_directory }}"
     remote_src: true
