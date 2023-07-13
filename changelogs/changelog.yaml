@@ -1,0 +1,10 @@
+ancestor: null
+releases:
+  1.0.0:
+    changes:
+      major_changes:
+      - Add common role
+      release_summary: Initial commit
+    fragments:
+    - init.yml
+    release_date: '2023-07-13'

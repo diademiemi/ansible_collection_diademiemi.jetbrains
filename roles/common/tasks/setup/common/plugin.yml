@@ -1,0 +1,21 @@
+- name: Get latest version of plugin
+  become: true
+  ansible.builtin.uri:
+    url: "{{ jetbrains_common_plugin_api_endpoint }}{{ jetbrains_common_plugin }}/updates"
+  register: jetbrains_common_plugin_version
+  changed_when: false
+
+- name: Download plugin
+  become: true
+  ansible.builtin.get_url:
+    url: "{{ jetbrains_common_plugin_download_endpoint }}{{ jetbrains_common_plugin_version.json[0].file }}"
+    dest: "/tmp/{{ jetbrains_common_name }}-plugin-{{ jetbrains_common_plugin }}.zip"
+    mode: "0644"
+
+- name: Extract plugin to directory
+  become: true
+  become_user: "{{ pycharm_user }}"
+  ansible.builtin.unarchive:
+    src: "/tmp/{{ jetbrains_common_name }}-plugin-{{ pycharm_plugin }}.zip"
+    dest: "{{ jetbrains_common_plugin_directory }}"
+    remote_src: true

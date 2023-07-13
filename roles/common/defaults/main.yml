@@ -1,0 +1,37 @@
+---
+jetbrains_common_name: "xxxxx"
+jetbrains_common_stylized_name: "Xxxxx"
+jetbrains_common_publisher: "JetBrains"
+
+jetbrains_common_version: "xxxxx.x"
+jetbrains_common_edition: "xxxxx"
+
+jetbrains_common_url_prefix: "{{ jetbrains_common_name }}"
+jetbrains_common_url: "https://download-cdn.jetbrains.com/{{ jetbrains_common_url_prefix }}/\
+  {{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}.tar.gz"
+jetbrains_common_plugins_user: "{{ ansible_user_id }}"
+jetbrains_common_plugins_group: "{{ ansible_user_id }}"
+
+jetbrains_common_naming_map:
+  xxxxx:
+    name: "xxxxx X Edition"
+    comment: "xxxxx X Edition"
+    code: CE
+  yyyyy:
+    name: "xxxxx Y Edition"
+    comment: "xxxxx Y Edition"
+    code: PE
+
+jetbrains_common_plugin_directory: "{{ lookup('env', 'HOME') }}/.local/share/\
+  {{ jetbrains_common_publisher }}/{{ jetbrains_common_stylized_name }}{{ jetbrains_common_naming_map[jetbrains_common_edition].code | default('') }}\
+  {{ jetbrains_common_version | regex_search('\\d{1,}\\.\\d{1,}') }}/"
+
+# For example, for IDEA: ~/.local/share/JetBrains/IntelliJIdea2023.1/
+
+jetbrains_common_plugins: []
+# - 17718 # GitHub Copilot
+
+jetbrains_common_plugin_api_endpoint: "https://plugins.jetbrains.com/api/plugins/"
+jetbrains_common_plugin_download_endpoint: "https://plugins.jetbrains.com/files/"
+
+...

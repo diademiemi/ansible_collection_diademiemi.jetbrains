@@ -16,3 +16,5 @@ rm ansible_role_template-main
 rm /tmp/ansible_role_template.$$
 
 ROLE_IN_COLLECTION="true" bash replace.sh $role_name
+
+cd ../../

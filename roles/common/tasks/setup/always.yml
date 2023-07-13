@@ -1,0 +1,65 @@
+---
+- name: Download {{ jetbrains_common_stylized_name }}
+  become: true
+  ansible.builtin.get_url:
+    url: "{{ jetbrains_common_url }}"
+    dest: /tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}.tar.gz
+    mode: "0644"
+    owner: root
+    group: root
+
+- name: Ensure application directory exists for {{ jetbrains_common_stylized_name }}
+  become: true
+  ansible.builtin.file:
+    path: "/opt/{{ jetbrains_common_name }}"
+    state: directory
+    mode: "0755"
+    owner: root
+    group: root
+
+- name: Extract {{ jetbrains_common_stylized_name }}
+  become: true
+  ansible.builtin.unarchive:
+    src: /tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}.tar.gz
+    dest: /opt/{{ jetbrains_common_name }}
+    remote_src: true
+    extra_opts:
+      - --strip-components=1
+
+- name: Create desktop entry
+  become: true
+  ansible.builtin.template:
+    src: "common.desktop.j2"
+    dest: "/usr/share/applications/{{ jetbrains_common_name }}.desktop"
+    mode: "0644"
+    owner: root
+    group: root
+
+- name: Create shell script
+  become: true
+  ansible.builtin.template:
+    src: "common.j2"
+    dest: "/usr/local/bin/{{ jetbrains_common_name }}"
+    mode: "0755"
+    owner: root
+    group: root
+
+- name: Ensure plugins directory exists
+  become: true
+  become_user: "{{ jetbrains_common_user }}"
+  ansible.builtin.file:
+    path: "{{ jetbrains_common_plugin_directory }}"
+    state: directory
+    mode: "0750"
+    owner: "{{ jetbrains_common_plugins_user }}"
+    group: "{{ jetbrains_common_plugins_group }}"
+  when: jetbrains_common_plugins | length > 0
+
+- name: Import task to install plugin
+  ansible.builtin.include_tasks: common/plugin.yml
+  loop: "{{ jetbrains_common_plugins }}"
+  loop_control:
+    loop_var: jetbrains_common_plugin
+
+
+...
