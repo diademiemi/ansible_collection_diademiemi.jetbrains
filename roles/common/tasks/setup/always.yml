@@ -46,7 +46,7 @@
 
 - name: Ensure plugins directory exists
   become: true
-  become_user: "{{ jetbrains_common_user }}"
+  become_user: "{{ jetbrains_common_plugins_user }}"
   ansible.builtin.file:
     path: "{{ jetbrains_common_plugin_directory }}"
     state: directory

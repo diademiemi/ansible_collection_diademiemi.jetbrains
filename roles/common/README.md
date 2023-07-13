@@ -81,4 +81,3 @@ molecule test
 ```
 
 These tests are automatically ran by GitHub Actions on push. If the tests are successful, the role is automatically published to Ansible Galaxy.
-

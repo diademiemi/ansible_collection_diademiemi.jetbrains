@@ -14,7 +14,7 @@
 
 - name: Extract plugin to directory
   become: true
-  become_user: "{{ pycharm_user }}"
+  become_user: "{{ jetbrains_common_plugins_user }}"
   ansible.builtin.unarchive:
     src: "/tmp/{{ jetbrains_common_name }}-plugin-{{ pycharm_plugin }}.zip"
     dest: "{{ jetbrains_common_plugin_directory }}"
