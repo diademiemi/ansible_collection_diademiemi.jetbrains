@@ -5,7 +5,7 @@ read role_name
 
 mkdir -p ./roles/$role_name
 
-wget -O /tmp/ansible_role_template.$$ https://github.com/diademiemi/ansible_role_template/archive/refs/heads/main.zip 
+wget -O /tmp/ansible_role_template.$$ https://github.com/diademiemi/ansible_role_template/archive/refs/heads/main.zip
 
 cd ./roles/$role_name
 

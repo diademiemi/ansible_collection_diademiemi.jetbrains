@@ -4,7 +4,7 @@ Ansible Collection - diademiemi.jetbrains
 
 Documentation for the collection jetbrains.
 
-Contents 
+Contents
 ========
 
 Roles
@@ -14,4 +14,3 @@ Role | Description
 <!-- [diademiemi.jetbrains.role](./roles/role/) | Example role -->
 
 Click on the role to see the README for that role.  
-
