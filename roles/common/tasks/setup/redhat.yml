@@ -1,0 +1,8 @@
+---
+- name: Ensure unzip is installed
+  become: true
+  ansible.builtin.yum:
+    name: unzip
+    state: present
+
+...
