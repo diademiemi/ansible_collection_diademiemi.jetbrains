@@ -1,12 +1,9 @@
 ---
 jetbrains_idea_name: "idea"
 jetbrains_idea_stylized_name: "IntelliJIdea"
-jetbrains_idea_publisher: "JetBrains"
 
 jetbrains_idea_version: "2023.1.4"
 jetbrains_idea_edition: "IU"
-
-# jetbrains_idea_url: "https://download.jetbrains.com/idea/{{ jetbrains_idea_name }}{{ jetbrains_idea_edition }}-{{ jetbrains_idea_version }}.tar.gz"
 
 jetbrains_idea_naming_map:
   IC:

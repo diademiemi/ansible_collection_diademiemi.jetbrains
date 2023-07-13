@@ -17,3 +17,19 @@ releases:
     fragments:
     - 1.1.0.yaml
     release_date: '2023-07-13'
+  2.0.0:
+    changes:
+      major_changes:
+      - Add IntelliJ IDEA role
+      release_summary: Add IntelliJ IDEA role
+    fragments:
+    - idea.yml
+    release_date: '2023-07-13'
+  2.1.0:
+    changes:
+      minor_changes:
+      - Added variable to override the download name for the IDE
+      release_summary: Small fixes to make URL more configurable
+    fragments:
+    - minor.yml
+    release_date: '2023-07-13'

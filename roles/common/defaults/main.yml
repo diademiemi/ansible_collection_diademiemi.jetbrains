@@ -7,8 +7,9 @@ jetbrains_common_version: "xxxxx.x"
 jetbrains_common_edition: "xxxxx"
 
 jetbrains_common_url_prefix: "{{ jetbrains_common_name }}"
+jetbrains_common_url_download_name: "{{ jetbrains_common_name }}"
 jetbrains_common_url: "https://download-cdn.jetbrains.com/{{ jetbrains_common_url_prefix }}/\
-  {{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}.tar.gz"
+  {{ jetbrains_common_url_download_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}.tar.gz"
 jetbrains_common_plugins_user: "{{ ansible_user_id }}"
 jetbrains_common_plugins_group: "{{ ansible_user_id }}"
 

@@ -5,6 +5,32 @@ diademiemi.jetbrains Release Notes
 .. contents:: Topics
 
 
+v2.1.0
+======
+
+Release Summary
+---------------
+
+Small fixes to make URL more configurable
+
+Minor Changes
+-------------
+
+- Added variable to override the download name for the IDE
+
+v2.0.0
+======
+
+Release Summary
+---------------
+
+Add IntelliJ IDEA role
+
+Major Changes
+-------------
+
+- Add IntelliJ IDEA role
+
 v1.1.0
 ======
 

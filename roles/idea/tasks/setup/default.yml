@@ -6,10 +6,8 @@
   vars:
     jetbrains_common_name: "{{ jetbrains_idea_name }}"
     jetbrains_common_stylized_name: "{{ jetbrains_idea_stylized_name }}"
-    jetbrains_common_publisher: "{{ jetbrains_idea_publisher }}"
     jetbrains_common_version: "{{ jetbrains_idea_version }}"
     jetbrains_common_edition: "{{ jetbrains_idea_edition }}"
-    # jetbrains_common_url: "{{ jetbrains_idea_url }}"
     jetbrains_common_naming_map: "{{ jetbrains_idea_naming_map }}"
 
 ...
