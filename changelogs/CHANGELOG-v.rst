@@ -5,6 +5,19 @@ diademiemi.jetbrains Release Notes
 .. contents:: Topics
 
 
+v3.0.0
+======
+
+Release Summary
+---------------
+
+Add CLion role
+
+Major Changes
+-------------
+
+- Add CLion role
+
 v2.1.0
 ======
 

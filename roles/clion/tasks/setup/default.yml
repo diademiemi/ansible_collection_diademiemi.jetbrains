@@ -1,0 +1,15 @@
+---
+- name: Include common role
+  ansible.builtin.include_role:
+    name: diademiemi.jetbrains.common
+    tasks_from: main.yml
+  vars:
+    jetbrains_common_name: "{{ jetbrains_clion_name }}"
+    jetbrains_common_stylized_name: "{{ jetbrains_clion_stylized_name }}"
+    jetbrains_common_version: "{{ jetbrains_clion_version }}"
+    jetbrains_common_edition: "{{ jetbrains_clion_edition }}"
+    jetbrains_common_naming_map: "{{ jetbrains_clion_naming_map }}"
+    jetbrains_common_url_prefix: "{{ jetbrains_clion_url_prefix }}"
+    jetbrains_common_url_download_name: "{{ jetbrains_clion_url_download_name }}"
+
+...

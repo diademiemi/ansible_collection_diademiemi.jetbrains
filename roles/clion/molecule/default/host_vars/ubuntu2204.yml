@@ -1,0 +1,5 @@
+---
+jetbrains_common_plugins:
+ - 8182  # Rust
+
+...

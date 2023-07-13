@@ -1,0 +1,17 @@
+---
+jetbrains_clion_name: "clion"
+jetbrains_clion_stylized_name: "CLion"
+
+jetbrains_clion_version: "2023.1.4"
+jetbrains_clion_edition: ""
+
+jetbrains_clion_url_prefix: "cpp"
+jetbrains_clion_url_download_name: "{{ jetbrains_clion_stylized_name }}"
+
+jetbrains_clion_naming_map:
+  "":
+    name: "CLion"
+    comment: "Cross-platform IDE for C and C++"
+    code: ""
+
+...
