@@ -8,7 +8,7 @@ namespace: diademiemi
 name: jetbrains
 
 # The version of the collection. Must be compatible with semantic versioning
-version: 1.0.0
+version: 1.1.0
 
 # The path to the Markdown (.md) readme file. This path is relative to the root of the collection
 readme: README.md
@@ -69,4 +69,3 @@ build_ignore:
 # 'omit_default_directives' is a boolean that controls whether the default directives are used. Mutually exclusive
 # with 'build_ignore'
 # manifest: null
-

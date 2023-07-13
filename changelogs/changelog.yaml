@@ -8,3 +8,12 @@ releases:
     fragments:
     - init.yml
     release_date: '2023-07-13'
+  1.1.0:
+    changes:
+      bugfixes:
+      - Fix plugin tasks
+      major_changes:
+      - Ensure tar and zip are installed
+    fragments:
+    - 1.1.0.yaml
+    release_date: '2023-07-13'
