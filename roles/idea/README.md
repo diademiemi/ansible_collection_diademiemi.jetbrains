@@ -30,6 +30,9 @@ Variable | Default | Description
 --- | --- | ---
 `jetbrains_idea_version` | `2023.1.4` | Version of idea to install
 `jetbrains_idea_edition` | `IC` | Edition of idea to install. Options: `["IC", "IU"]`
+`jetbrains_idea_plugins` | `[]` | List of plugin IDs to install
+`jetbrains_idea_plugins_user` | `{{ ansible_user_id }}` | User to install plugins for. Defaults to the remote user
+`jetbrains_idea_plugins_group` | `{{ ansible_user_id }}` | Group to install plugins for. Defaults to the remote user
 <!--
 `variable` | `default` | Variable example
 `long_variable` | See [defaults/main.yml](./defaults/main.yml) | Variable referring to defaults

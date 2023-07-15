@@ -2,4 +2,8 @@
 jetbrains_idea_version: "2023.1.4"
 jetbrains_idea_edition: "IC"
 
+jetbrains_idea_plugins: []
+jetbrains_idea_plugins_user: "{{ ansible_user_id }}"
+jetbrains_idea_plugins_group: "{{ ansible_user_id }}"
+
 ...

@@ -1,4 +1,8 @@
 ---
 jetbrains_clion_version: "2023.1.4"
 
+jetbrains_clion_plugins: []
+jetbrains_clion_plugins_user: "{{ ansible_user_id }}"
+jetbrains_clion_plugins_group: "{{ ansible_user_id }}"
+
 ...

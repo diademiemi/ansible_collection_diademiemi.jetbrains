@@ -29,6 +29,10 @@ Role Variables
 Variable | Default | Description
 --- | --- | ---
 `jetbrains_clion_version` | `2023.1.4` | Version of clion to install
+`jetbrains_clion_plugins` | `[]` | List of plugin IDs to install
+`jetbrains_clion_plugins_user` | `{{ ansible_user_id }}` | User to install plugins for. Defaults to the remote user
+`jetbrains_clion_plugins_group` | `{{ ansible_user_id }}` | Group to install plugins for. Defaults to the remote user
+
 <!--
 `variable` | `default` | Variable example
 `long_variable` | See [defaults/main.yml](./defaults/main.yml) | Variable referring to defaults

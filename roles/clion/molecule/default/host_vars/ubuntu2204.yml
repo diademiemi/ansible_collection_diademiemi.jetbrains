@@ -1,5 +1,5 @@
 ---
-jetbrains_common_plugins:
+jetbrains_clion_plugins:
  - 8182  # Rust
 
 ...

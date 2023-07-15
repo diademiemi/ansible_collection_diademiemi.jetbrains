@@ -1,6 +1,5 @@
-release_summary: "Allow configuring versions"
-
 minor_changes:
   - "Allow configuring versions"
   - "Allow configuring editions"
+  - "Allow configuring plugins per role"
   - "Updated READMEs"

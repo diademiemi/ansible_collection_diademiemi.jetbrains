@@ -11,5 +11,9 @@
     jetbrains_common_naming_map: "{{ jetbrains_clion_naming_map }}"
     jetbrains_common_url_prefix: "{{ jetbrains_clion_url_prefix }}"
     jetbrains_common_url_download_name: "{{ jetbrains_clion_url_download_name }}"
+    jetbrains_common_plugins: "{{ jetbrains_clion_plugins }}"
+    jetbrains_common_plugins_user: "{{ jetbrains_clion_plugins_user }}"
+    jetbrains_common_plugins_group: "{{ jetbrains_clion_plugins_group }}"
+
 
 ...

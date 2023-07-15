@@ -9,5 +9,8 @@
     jetbrains_common_version: "{{ jetbrains_idea_version }}"
     jetbrains_common_edition: "{{ jetbrains_idea_edition }}"
     jetbrains_common_naming_map: "{{ jetbrains_idea_naming_map }}"
+    jetbrains_common_plugins: "{{ jetbrains_idea_plugins }}"
+    jetbrains_common_plugins_user: "{{ jetbrains_idea_plugins_user }}"
+    jetbrains_common_plugins_group: "{{ jetbrains_idea_plugins_group }}"
 
 ...

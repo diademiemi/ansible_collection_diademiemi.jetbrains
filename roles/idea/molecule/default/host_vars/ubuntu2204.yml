@@ -1,5 +1,5 @@
 ---
-jetbrains_common_plugins:
+jetbrains_idea_plugins:
  - 17718  # GitHub Copilot
 
 ...
