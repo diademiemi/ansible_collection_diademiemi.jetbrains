@@ -1,0 +1,17 @@
+---
+jetbrains_android_studio_name: "studio"
+jetbrains_android_studio_stylized_name: "AndroidStudio"
+jetbrains_android_studio_publisher: "Google"
+
+jetbrains_android_studio_edition: ""
+
+jetbrains_android_studio_url: "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/\
+  {{ jetbrains_android_studio_version }}/android-studio-{{ jetbrains_android_studio_version }}-linux.tar.gz"
+
+jetbrains_android_studio_naming_map:
+  "":
+    name: "Android Studio"
+    comment: "Official IDE for Android app development"
+    code: ""
+
+...
