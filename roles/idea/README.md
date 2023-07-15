@@ -10,13 +10,13 @@ Include more information about idea in this section.
 Requirements
 ------------
 These platforms are supported:
-- Ubuntu 20.04  
-- Ubuntu 22.04  
-- Debian 10  
-- Debian 11  
-- EL 8 (Tested on Rocky Linux 8)  
-- EL 9 (Tested on Rocky Linux 9)  
-- Fedora 38  
+- Ubuntu 20.04
+- Ubuntu 22.04
+- Debian 10
+- Debian 11
+- EL 8 (Tested on Rocky Linux 8)
+- EL 9 (Tested on Rocky Linux 9)
+- Fedora 38
 - openSUSE Leap 15.4
 
 <!--
@@ -28,6 +28,8 @@ Role Variables
 
 Variable | Default | Description
 --- | --- | ---
+`jetbrains_idea_version` | `2023.1.4` | Version of idea to install
+`jetbrains_idea_edition` | `IC` | Edition of idea to install. Options: `["IC", "IU"]`
 <!--
 `variable` | `default` | Variable example
 `long_variable` | See [defaults/main.yml](./defaults/main.yml) | Variable referring to defaults
@@ -37,7 +39,7 @@ Variable | Default | Description
 Dependencies
 ------------
 <!-- List dependencies on other roles or criteria -->
-None
+- `diademiemi.jetbrains.common` role
 
 Example Playbook
 ----------------
@@ -47,9 +49,6 @@ Example Playbook
   hosts: "{{ target | default('idea') }}"
   roles:
     - role: "diademiemi.idea"
-      vars:
-        __role_action: "setup"  # Variable to control which tasks are ran
-        # __role_action: "upstream"  # Delegate to role from upstream provider
       tags: ['diademiemi', 'idea', 'setup']    ```
 
 ```

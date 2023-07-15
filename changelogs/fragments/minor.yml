@@ -1,0 +1,6 @@
+release_summary: "Allow configuring versions"
+
+minor_changes:
+  - "Allow configuring versions"
+  - "Allow configuring editions"
+  - "Updated READMEs"

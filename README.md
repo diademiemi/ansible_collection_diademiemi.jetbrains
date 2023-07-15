@@ -11,6 +11,8 @@ Roles
 ------
 Role | Description
 --- | ---
-<!-- [diademiemi.jetbrains.role](./roles/role/) | Example role -->
+[diademiemi.jetbrains.idea](./roles/idea/) | Install IntelliJ IDEA
+[diademiemi.jetbrains.clion](./roles/clion/) | Install CLion
+[diademiemi.jetbrains.common](./roles/common/) | Common role for all JetBrains IDEs. Not intended to be used directly.
 
 Click on the role to see the README for that role.  

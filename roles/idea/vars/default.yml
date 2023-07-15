@@ -2,9 +2,6 @@
 jetbrains_idea_name: "idea"
 jetbrains_idea_stylized_name: "IntelliJIdea"
 
-jetbrains_idea_version: "2023.1.4"
-jetbrains_idea_edition: "IU"
-
 jetbrains_idea_naming_map:
   IC:
     name: "IntelliJ IDEA Community Edition"
