@@ -39,22 +39,23 @@ jobs:
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             echo "matrix_output=${{ github.event.inputs.role }}" >> "$GITHUB_ENV"
             exit 0
-          fi
-          roles=""
-          for role in ${{ steps.changed-roles.outputs.all_changed_and_modified_files }}; do
-            echo "Checking $role"
-            if [ -f roles/$role/molecule/default/molecule.yml ]; then
-              echo "Found molecule.yml in $role"
-              if [ -z "$roles" ]; then
-                roles="\"$role\""
-              else
-                roles="$roles, \"$role\""
+          else
+            roles=""
+            for role in ${{ steps.changed-roles.outputs.all_changed_and_modified_files }}; do
+              echo "Checking $role"
+              if [ -f roles/$role/molecule/default/molecule.yml ]; then
+                echo "Found molecule.yml in $role"
+                if [ -z "$roles" ]; then
+                  roles="\"$role\""
+                else
+                  roles="$roles, \"$role\""
+                fi
+                echo DEBUG $roles
               fi
-              echo DEBUG $roles
-            fi
-          done
-          echo DEBUG "matrix_output=[$roles]"
-          echo "matrix_output=[$roles]" >> "$GITHUB_ENV"
+            done
+            echo DEBUG "matrix_output=[$roles]"
+            echo "matrix_output=[$roles]" >> "$GITHUB_ENV"
+          fi
           exit 0
 
   molecule:
