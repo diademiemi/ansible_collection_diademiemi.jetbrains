@@ -1,0 +1,9 @@
+---
+jetbrains_pycharm_version: "2023.1.4"
+jetbrains_pycharm_edition: "community"
+
+jetbrains_pycharm_plugins: []
+jetbrains_pycharm_plugins_user: "{{ ansible_user_id }}"
+jetbrains_pycharm_plugins_group: "{{ ansible_user_id }}"
+
+...

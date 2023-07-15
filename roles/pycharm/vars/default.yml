@@ -1,0 +1,21 @@
+---
+jetbrains_pycharm_name: "pycharm"
+jetbrains_pycharm_stylized_name: "PyCharm"
+
+jetbrains_pycharm_naming_map:
+  professional:
+    name: "PyCharm Professional Edition"
+    comment: "The Python IDE for Professional Developers"
+    code: ""
+  community:
+    name: "PyCharm Community Edition"
+    comment: "The Python IDE for Professional Developers"
+    code: ""
+
+jetbrains_pycharm_url_prefix: "python"
+
+jetbrains_pycharm_url: "https://download-cdn.jetbrains.com/{{ jetbrains_common_url_prefix }}/\
+  {{ jetbrains_common_url_download_name }}-{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}.tar.gz"
+
+
+...
