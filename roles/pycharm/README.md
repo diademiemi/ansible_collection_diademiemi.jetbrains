@@ -1,4 +1,4 @@
-Ansible Role Template
+Ansible Role PyCharm
 =========
 
 [![Molecule Test](https://github.com/diademiemi/ansible_role_pycharm/actions/workflows/molecule.yml/badge.svg)](https://github.com/diademiemi/ansible_role_pycharm/actions/workflows/molecule.yml)
@@ -84,4 +84,3 @@ molecule test
 ```
 
 These tests are automatically ran by GitHub Actions on push. If the tests are successful, the role is automatically published to Ansible Galaxy.
-

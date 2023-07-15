@@ -1,4 +1,4 @@
-Ansible Role Template
+COMMON ROLE FOR JETBRAINS PRODUCTS
 =========
 
 [![Molecule Test](https://github.com/diademiemi/ansible_role_common/actions/workflows/molecule.yml/badge.svg)](https://github.com/diademiemi/ansible_role_common/actions/workflows/molecule.yml)
@@ -39,18 +39,6 @@ Dependencies
 <!-- List dependencies on other roles or criteria -->
 None
 
-Example Playbook
-----------------
-
-```yaml
-- name: Use diademiemi.common role
-  hosts: "{{ target | default('common') }}"
-  roles:
-    - role: "diademiemi.common"
-      tags: ['diademiemi', 'common', 'setup']    ```
-
-```
-
 License
 -------
 
@@ -60,21 +48,3 @@ Author Information
 ------------------
 
 - diademiemi (@diademiemi)
-
-Role Testing
-------------
-
-This repository comes with Molecule tests for Docker on the supported platforms.
-Install Molecule by running
-
-```bash
-pip3 install -r requirements.txt
-```
-
-Run the tests with
-
-```bash
-molecule test
-```
-
-These tests are automatically ran by GitHub Actions on push. If the tests are successful, the role is automatically published to Ansible Galaxy.
