@@ -9,8 +9,8 @@ name: Molecule Test
       - "roles/**"
   workflow_dispatch:
     inputs:
-      role:
-        description: 'Role to test'
+      roles:
+        description: 'Array of roles to test'
         required: true
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
         id: matrix
         run: |
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            echo "matrix_output=[\"${{ github.event.inputs.role }}\"]" >> "$GITHUB_ENV"
+            echo "matrix_output="${{ github.event.inputs.role }}" >> "$GITHUB_ENV"
             exit 0
           fi
           roles=""
