@@ -41,3 +41,22 @@ releases:
     fragments:
     - clion.yml
     release_date: '2023-07-13'
+  4.0.0:
+    changes:
+      major_changes:
+      - Add Android Studio role
+      - Add PyCharm role
+      minor_changes:
+      - Allow configuring editions
+      - Allow configuring plugins per role
+      - Allow configuring versions
+      - Update molecule variables to also test editions
+      - Updated READMEs
+      release_summary: Add new roles and clean up existing roles
+    fragments:
+    - android_studio.yml
+    - molecule.yml
+    - pycharm.yml
+    - release.yml
+    - update_vars.yml
+    release_date: '2023-07-16'

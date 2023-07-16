@@ -5,6 +5,29 @@ diademiemi.jetbrains Release Notes
 .. contents:: Topics
 
 
+v4.0.0
+======
+
+Release Summary
+---------------
+
+Add new roles and clean up existing roles
+
+Major Changes
+-------------
+
+- Add Android Studio role
+- Add PyCharm role
+
+Minor Changes
+-------------
+
+- Allow configuring editions
+- Allow configuring plugins per role
+- Allow configuring versions
+- Update molecule variables to also test editions
+- Updated READMEs
+
 v3.0.0
 ======
 
