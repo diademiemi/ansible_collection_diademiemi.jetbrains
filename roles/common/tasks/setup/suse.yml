@@ -1,5 +1,5 @@
 ---
-- name: Ensure unzip is installed
+- name: Ensure archive requirements are installed
   become: true
   community.general.zypper:
     name:

@@ -1,10 +1,11 @@
 ---
-- name: Ensure unzip is installed
+- name: Ensure archive requirements are installed
   become: true
   ansible.builtin.yum:
     name:
       - unzip
       - tar
+      - gzip
     state: present
 
 ...
