@@ -1,0 +1,16 @@
+---
+jetbrains_goland_name: "goland"
+jetbrains_goland_stylized_name: "GoLand"
+
+jetbrains_goland_edition: ""
+
+jetbrains_goland_url_prefix: "go"
+jetbrains_goland_url_download_name: "{{ jetbrains_goland_name }}"
+
+jetbrains_goland_naming_map:
+  "":
+    name: "GoLand"
+    comment: "A Go IDE with extended support for JavaScript, TypeScript, and databases"
+    code: ""
+
+...

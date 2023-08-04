@@ -5,6 +5,19 @@ diademiemi.jetbrains Release Notes
 .. contents:: Topics
 
 
+v5.0.0
+======
+
+Release Summary
+---------------
+
+Add GoLand role
+
+Major Changes
+-------------
+
+- Add GoLand role
+
 v4.0.0
 ======
 

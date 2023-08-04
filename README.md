@@ -17,6 +17,7 @@ Role | Description
 [diademiemi.jetbrains.clion](./roles/clion/) | Install CLion
 [diademiemi.jetbrains.pycharm](./roles/pycharm/) | Install PyCharm
 [diademiemi.jetbrains.android_studio](./roles/android_studio/) | Install Android Studio
+[diademiemi.jetbrains.goland](./roles/goland/) | Install GoLand
 [diademiemi.jetbrains.common](./roles/common/) | Common role for all JetBrains IDEs. Not intended to be used directly.
 
 Click on the role to see the README for that role.  

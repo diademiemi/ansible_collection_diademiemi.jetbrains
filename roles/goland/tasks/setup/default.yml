@@ -1,0 +1,19 @@
+---
+- name: Include common role
+  ansible.builtin.include_role:
+    name: diademiemi.jetbrains.common
+    tasks_from: main.yml
+  vars:
+    jetbrains_common_name: "{{ jetbrains_goland_name }}"
+    jetbrains_common_stylized_name: "{{ jetbrains_goland_stylized_name }}"
+    jetbrains_common_version: "{{ jetbrains_goland_version }}"
+    jetbrains_common_edition: "{{ jetbrains_goland_edition }}"
+    jetbrains_common_naming_map: "{{ jetbrains_goland_naming_map }}"
+    jetbrains_common_url_prefix: "{{ jetbrains_goland_url_prefix }}"
+    jetbrains_common_url_download_name: "{{ jetbrains_goland_url_download_name }}"
+    jetbrains_common_plugins: "{{ jetbrains_goland_plugins }}"
+    jetbrains_common_plugins_user: "{{ jetbrains_goland_plugins_user }}"
+    jetbrains_common_plugins_group: "{{ jetbrains_goland_plugins_group }}"
+
+
+...
