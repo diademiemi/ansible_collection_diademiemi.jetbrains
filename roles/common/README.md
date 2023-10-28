@@ -1,11 +1,7 @@
 COMMON ROLE FOR JETBRAINS PRODUCTS
 =========
 
-[![Molecule Test](https://github.com/diademiemi/ansible_role_common/actions/workflows/molecule.yml/badge.svg)](https://github.com/diademiemi/ansible_role_common/actions/workflows/molecule.yml)
-
-This is an Ansible role to install and configure common.
-
-Include more information about common in this section.
+TESTED THROUGH OTHER ROLES
 
 Requirements
 ------------

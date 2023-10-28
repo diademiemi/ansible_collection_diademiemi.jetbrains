@@ -1,8 +1,7 @@
 Ansible Role Android Studio
 =========
 
-[![Molecule Test](https://github.com/diademiemi/ansible_role_android_studio/actions/workflows/molecule.yml/badge.svg)](https://github.com/diademiemi/ansible_role_android_studio/actions/workflows/molecule.yml)
-
+[![Molecule test](https://github.com/diademiemi/ansible_collection_diademiemi.jetbrains/actions/workflows/ansible-role-android_studio.yml/badge.svg)](https://github.com/diademiemi/ansible_collection_diademiemi.jetbrains/actions/workflows/ansible-role-android_studio.yml)
 This is an Ansible role to install and configure Android Studio.
 
 Include more information about android_studio in this section.

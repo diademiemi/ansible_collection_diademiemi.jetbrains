@@ -1,8 +1,7 @@
 Ansible Role Template
 =========
 
-[![Molecule Test](https://github.com/diademiemi/ansible_role_goland/actions/workflows/molecule.yml/badge.svg)](https://github.com/diademiemi/ansible_role_goland/actions/workflows/molecule.yml)
-
+[![Molecule test](https://github.com/diademiemi/ansible_collection_diademiemi.jetbrains/actions/workflows/ansible-role-goland.yml/badge.svg)](https://github.com/diademiemi/ansible_collection_diademiemi.jetbrains/actions/workflows/ansible-role-goland.yml)
 This is an Ansible role to install and configure goland.
 
 Include more information about goland in this section.

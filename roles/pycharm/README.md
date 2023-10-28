@@ -1,7 +1,7 @@
 Ansible Role PyCharm
 =========
 
-[![Molecule Test](https://github.com/diademiemi/ansible_role_pycharm/actions/workflows/molecule.yml/badge.svg)](https://github.com/diademiemi/ansible_role_pycharm/actions/workflows/molecule.yml)
+[![Molecule test](https://github.com/diademiemi/ansible_collection_diademiemi.jetbrains/actions/workflows/ansible-role-pycharm.yml/badge.svg)](https://github.com/diademiemi/ansible_collection_diademiemi.jetbrains/actions/workflows/ansible-role-pycharm.yml)
 
 This is an Ansible role to install and configure pycharm.
 
