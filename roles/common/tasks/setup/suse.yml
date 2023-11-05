@@ -6,6 +6,8 @@
       - unzip
       - tar
       - gzip
+      - zstd
+      - xz
     state: present
 
 ...
