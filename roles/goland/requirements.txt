@@ -5,3 +5,4 @@ ansible-compat
 antsibull-changelog
 molecule
 molecule-plugins[podman]
+jmespath
