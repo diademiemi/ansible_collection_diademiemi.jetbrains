@@ -5,6 +5,22 @@ diademiemi.jetbrains Release Notes
 .. contents:: Topics
 
 
+v6.0.0
+======
+
+Release Summary
+---------------
+
+Update versions, support Debian 12, update CI
+
+Major Changes
+-------------
+
+- Properly update programs
+- Support Debian 12
+- Update CI
+- Update to newest versions
+
 v5.0.0
 ======
 

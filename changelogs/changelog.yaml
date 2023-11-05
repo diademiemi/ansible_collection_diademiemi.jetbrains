@@ -68,3 +68,14 @@ releases:
     fragments:
     - 5.yml
     release_date: '2023-08-04'
+  6.0.0:
+    changes:
+      major_changes:
+      - Properly update programs
+      - Support Debian 12
+      - Update CI
+      - Update to newest versions
+      release_summary: Update versions, support Debian 12, update CI
+    fragments:
+    - change.yml
+    release_date: '2023-11-05'
