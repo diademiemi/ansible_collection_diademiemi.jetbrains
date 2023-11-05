@@ -9,7 +9,7 @@ name: Molecule Tests goland
     branches:
       - main
     paths:
-      - "roles/goland"
+      - "roles/goland/**"
   workflow_dispatch:
 
 jobs:

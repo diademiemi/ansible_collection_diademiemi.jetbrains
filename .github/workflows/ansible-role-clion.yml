@@ -9,7 +9,7 @@ name: Molecule Tests clion
     branches:
       - main
     paths:
-      - "roles/clion"
+      - "roles/clion/**"
   workflow_dispatch:
 
 jobs:

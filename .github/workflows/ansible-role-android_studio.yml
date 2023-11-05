@@ -9,7 +9,7 @@ name: Molecule Tests android_studio
     branches:
       - main
     paths:
-      - "roles/android_studio"
+      - "roles/android_studio/**"
   workflow_dispatch:
 
 jobs:

@@ -9,7 +9,7 @@ name: Molecule Tests template
     branches:
       - main
     paths:
-      - "roles/template"
+      - "roles/template/**"
   workflow_dispatch:
 
 jobs:

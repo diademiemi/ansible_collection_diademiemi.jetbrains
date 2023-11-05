@@ -9,7 +9,7 @@ name: Molecule Tests pycharm
     branches:
       - main
     paths:
-      - "roles/pycharm"
+      - "roles/pycharm/**"
   workflow_dispatch:
 
 jobs:
