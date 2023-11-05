@@ -2,7 +2,7 @@
 # This workflow requires a GALAXY_API_KEY secret present in the GitHub
 # repository or organization.
 
-name: Molecule tests for template
+name: Molecule Tests template
 
 "on":
   push:
