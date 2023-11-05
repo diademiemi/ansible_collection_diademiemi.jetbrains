@@ -8,6 +8,31 @@
     owner: root
     group: root
 
+- name: Check if product info exists
+  become: true
+  ansible.builtin.stat:
+    path: "/opt/{{ jetbrains_common_name }}/product-info.json"
+  register: jetbrains_common_product_info
+
+- name: Check if versions differ
+  when: jetbrains_common_product_info.stat.exists
+  block:
+    - name: Read product-info.json
+      ansible.builtin.slurp:
+        src: "/opt/{{ jetbrains_common_name }}/product-info.json"
+      register: jetbrains_common_product_info_json
+
+    - name: Parse product-info.json
+      ansible.builtin.set_fact:
+        jetbrains_common_product_info_version: "{{ jetbrains_common_product_info_json['content'] | b64decode | from_json | json_query('version') }}"
+
+    - name: Remove directory if already installed
+      become: true
+      ansible.builtin.file:
+        path: "/opt/{{ jetbrains_common_name }}"
+        state: absent
+      when: jetbrains_common_product_info_version != jetbrains_common_version
+
 - name: Ensure application directory exists for {{ jetbrains_common_stylized_name }}
   become: true
   ansible.builtin.file:
