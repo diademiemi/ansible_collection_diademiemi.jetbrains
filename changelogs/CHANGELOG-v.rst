@@ -5,6 +5,19 @@ diademiemi.jetbrains Release Notes
 .. contents:: Topics
 
 
+v6.2.0
+======
+
+Release Summary
+---------------
+
+Fix common role when statements
+
+Major Changes
+-------------
+
+- Fix common role when statements
+
 v6.1.0
 ======
 

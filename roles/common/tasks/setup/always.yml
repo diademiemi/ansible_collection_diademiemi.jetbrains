@@ -75,7 +75,6 @@
             mode: "0755"
             owner: root
             group: root
-          when: jetbrains_common_product_info_version != jetbrains_common_new_product_info_version
 
 - name: Perform new install
   when: not jetbrains_common_product_info.stat.exists

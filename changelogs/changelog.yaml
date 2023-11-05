@@ -88,3 +88,11 @@ releases:
     fragments:
     - 6.2.yml
     release_date: '2023-11-05'
+  6.2.0:
+    changes:
+      major_changes:
+      - Fix common role when statements
+      release_summary: Fix common role when statements
+    fragments:
+    - fix.yml
+    release_date: '2023-11-05'
