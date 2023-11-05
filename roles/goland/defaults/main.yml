@@ -1,5 +1,5 @@
 ---
-jetbrains_goland_version: "2023.2"
+jetbrains_goland_version: "2023.2.4"
 
 jetbrains_goland_plugins: []
 jetbrains_goland_plugins_user: "{{ ansible_user_id }}"
