@@ -2,6 +2,7 @@
 - name: Converge
   hosts: all
   gather_facts: true
+  serial: 5
   pre_tasks:
     # Prevent Apt cache errors
     - name: "Refresh Apt cache"
@@ -27,5 +28,27 @@
     - name: "Include diademiemi.idea"
       ansible.builtin.include_role:
         name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
+
+    - name: Get all tar.gz files in /tmp
+      ansible.builtin.find:
+        paths: /tmp
+        patterns: "*.tar.gz"
+        recurse: false
+      register: tar_files
+      changed_when: false
+      # failed_when: false
+      when: '"molecule-idempotence-notest" in ansible_skip_tags'
+
+    - name: Remove data after tests to free up space on GitHub Runner
+      become: true
+      ansible.builtin.file:
+        path: ""
+        state: absent
+      changed_when: false
+      # failed_when: false
+      when: '"molecule-idempotence-notest" in ansible_skip_tags'
+      loop:
+        - "{{ tar_files.files | map(attribute='path') | list }}"
+        - /opt/
 
 ...
