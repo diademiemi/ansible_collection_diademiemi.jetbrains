@@ -79,3 +79,12 @@ releases:
     fragments:
     - change.yml
     release_date: '2023-11-05'
+  6.1.0:
+    changes:
+      major_changes:
+      - Add jmespath to requirements.txt
+      - Fix become on common role
+      release_summary: Add jmespath to requirements.txt & Fix become on common role
+    fragments:
+    - 6.2.yml
+    release_date: '2023-11-05'

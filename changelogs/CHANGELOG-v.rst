@@ -5,6 +5,20 @@ diademiemi.jetbrains Release Notes
 .. contents:: Topics
 
 
+v6.1.0
+======
+
+Release Summary
+---------------
+
+Add jmespath to requirements.txt & Fix become on common role
+
+Major Changes
+-------------
+
+- Add jmespath to requirements.txt
+- Fix become on common role
+
 v6.0.0
 ======
 
