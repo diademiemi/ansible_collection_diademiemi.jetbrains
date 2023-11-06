@@ -17,7 +17,7 @@ These platforms are supported:
 - EL 8 (Tested on Rocky Linux 8)
 - EL 9 (Tested on Rocky Linux 9)
 - Fedora 38
-- openSUSE Leap 15.4
+- openSUSE Leap 15.5
 
 <!--
 - List hardware requirements here  
@@ -43,10 +43,10 @@ Example Playbook
 ----------------
 
 ```yaml
-- name: Use diademiemi.goland role
+- name: Use diademiemi.jetbrains.goland role
   hosts: "{{ target | default('goland') }}"
   roles:
-    - role: "diademiemi.goland"
+    - role: "diademiemi.jetbrains.goland"
       tags: ['diademiemi', 'goland', 'setup']    ```
 
 ```

@@ -66,15 +66,21 @@
             path: "/opt/{{ jetbrains_common_name }}"
             state: absent
 
-        - name: Move temporary directory to permanent location
+        - name: Copy temporary directory to permanent location
           become: true
-          ansible.builtin.file:
+          ansible.builtin.copy:
             src: "/tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}"
             dest: "/opt/{{ jetbrains_common_name }}"
-            state: directory
+            remote_src: true
             mode: "0755"
             owner: root
             group: root
+
+        - name: Remove temporary directory
+          become: true
+          ansible.builtin.file:
+            path: "/tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}"
+            state: absent
 
 - name: Perform new install
   when: not jetbrains_common_product_info.stat.exists

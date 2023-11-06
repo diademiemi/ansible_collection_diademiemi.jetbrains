@@ -2,7 +2,7 @@
 - name: Converge
   hosts: all
   gather_facts: true
-  serial: 5
+  serial: 3
   pre_tasks:
     # Prevent Apt cache errors
     - name: "Refresh Apt cache"
@@ -25,7 +25,7 @@
       failed_when: false
 
   tasks:
-    - name: "Include diademiemi.idea"
+    - name: "Include diademiemi.jetbrains.idea"
       ansible.builtin.include_role:
         name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
 

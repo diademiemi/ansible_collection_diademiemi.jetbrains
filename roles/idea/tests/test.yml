@@ -1,5 +1,5 @@
 ---
-- name: Run diademiemi.idea on localhost
+- name: Run diademiemi.jetbrains.idea on localhost
   hosts: localhost
   tasks:
     - name: "Ensure temporary roles directory exists"
@@ -12,7 +12,7 @@
         src: "{{ lookup('env', 'PWD') }}"
         dest: "~/.ansible/roles/{{ lookup('env', 'PWD') | basename }}"
         state: link
-    - name: "Include diademiemi.idea"
+    - name: "Include diademiemi.jetbrains.idea"
       ansible.builtin.include_role:
         name: "{{ lookup('env', 'PWD') | basename }}"
     - name: "Remove temporary symlink in roles directory"
