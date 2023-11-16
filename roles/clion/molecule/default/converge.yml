@@ -2,7 +2,7 @@
 - name: Converge
   hosts: all
   gather_facts: true
-  serial: 3
+  serial: 1
   pre_tasks:
     # Prevent Apt cache errors
     - name: "Refresh Apt cache"
