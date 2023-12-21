@@ -37,7 +37,7 @@
       register: jetbrains_common_temporary_directory
       changed_when: "jetbrains_common_temporary_directory is changed and 'molecule-idempotence-notest' not in ansible_skip_tags"
 
-    - name: Extract downloaded file
+    - name: Extract only product-info.json from downloaded file
       become: true
       ansible.builtin.unarchive:
         src: /tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}.tar.gz
@@ -45,6 +45,8 @@
         remote_src: true
         extra_opts:
           - --strip-components=1
+          - --no-anchored
+          - product-info.json
       register: jetbrains_extract_temporary_directory
       changed_when: "jetbrains_extract_temporary_directory is changed and 'molecule-idempotence-notest' not in ansible_skip_tags"
 
@@ -65,6 +67,15 @@
           ansible.builtin.file:
             path: "/opt/{{ jetbrains_common_name }}"
             state: absent
+
+        - name: Extract downloaded file
+          become: true
+          ansible.builtin.unarchive:
+            src: /tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}.tar.gz
+            dest: /tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}
+            remote_src: true
+            extra_opts:
+              - --strip-components=1
 
         - name: Copy temporary directory to permanent location
           become: true
