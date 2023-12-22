@@ -96,3 +96,12 @@ releases:
     fragments:
     - fix.yml
     release_date: '2023-11-05'
+  7.0.0:
+    changes:
+      major_changes:
+      - No longer extracts the entire archive to a temporary directory, instead extracts
+        only the files needed for the role to compare versions for idempotency.
+      release_summary: Increase speed of roles by only extracting the files needed
+    fragments:
+    - fragment.yml
+    release_date: '2023-12-22'

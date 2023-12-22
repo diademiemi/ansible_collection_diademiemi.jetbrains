@@ -5,6 +5,19 @@ diademiemi.jetbrains Release Notes
 .. contents:: Topics
 
 
+v7.0.0
+======
+
+Release Summary
+---------------
+
+Increase speed of roles by only extracting the files needed
+
+Major Changes
+-------------
+
+- No longer extracts the entire archive to a temporary directory, instead extracts only the files needed for the role to compare versions for idempotency.
+
 v6.2.0
 ======
 
