@@ -1,0 +1,8 @@
+---
+jetbrains_phpstorm_version: "2023.3.2"
+
+jetbrains_phpstorm_plugins: []
+jetbrains_phpstorm_plugins_user: "{{ ansible_user_id }}"
+jetbrains_phpstorm_plugins_group: "{{ ansible_user_id }}"
+
+...

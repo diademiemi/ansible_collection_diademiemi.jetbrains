@@ -1,0 +1,5 @@
+---
+jetbrains_phpstorm_plugins:
+ - 17718  # GitHub Copilot
+
+...
