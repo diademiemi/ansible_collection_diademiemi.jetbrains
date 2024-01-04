@@ -11,6 +11,7 @@
     jetbrains_common_naming_map: "{{ jetbrains_phpstorm_naming_map }}"
     jetbrains_common_url: "{{ jetbrains_phpstorm_url }}"
     jetbrains_common_url_prefix: "{{ jetbrains_phpstorm_url_prefix }}"
+    jetbrains_common_url_download_name: "{{ jetbrains_phpstorm_url_download_name }}"
     jetbrains_common_plugins: "{{ jetbrains_phpstorm_plugins }}"
     jetbrains_common_plugins_user: "{{ jetbrains_phpstorm_plugins_user }}"
     jetbrains_common_plugins_group: "{{ jetbrains_phpstorm_plugins_group }}"

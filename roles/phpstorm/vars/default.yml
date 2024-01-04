@@ -1,5 +1,5 @@
 ---
-jetbrains_phpstorm_name: "PhpStorm"
+jetbrains_phpstorm_name: "phpstorm"
 jetbrains_phpstorm_stylized_name: "PhpStorm"
 
 jetbrains_phpstorm_edition: ""
@@ -11,6 +11,7 @@ jetbrains_phpstorm_naming_map:
     code: ""
 
 jetbrains_phpstorm_url_prefix: "webide"
+jetbrains_phpstorm_url_download_name: "{{ jetbrains_phpstorm_stylized_name }}"
 
 jetbrains_phpstorm_url: "https://download-cdn.jetbrains.com/{{ jetbrains_common_url_prefix }}/\
   {{ jetbrains_common_url_download_name }}-{{ jetbrains_common_version }}.tar.gz"
