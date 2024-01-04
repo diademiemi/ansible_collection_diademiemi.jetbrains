@@ -1,0 +1,105 @@
+---
+name: Molecule Test
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, assigned, review_requested]
+    paths:
+      - "roles/**"
+  workflow_dispatch:
+    inputs:
+      roles:
+        description: 'Array of roles to test'
+        required: true
+
+jobs:
+  find-molecule:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ env.matrix_output }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Get changed roles
+        id: changed-roles
+        uses: tj-actions/changed-files@v35
+        with:
+          path: "roles"
+          diff_relative: "true"
+          files: "**"
+          dir_names: "true"
+          dir_names_max_depth: "1"
+          since_last_remote_commit: "true"
+
+      - name: Return roles that have molecule tests
+        id: matrix
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo 'matrix_output=${{ github.event.inputs.roles }}' >> "$GITHUB_ENV"
+            exit 0
+          else
+            roles=""
+            for role in ${{ steps.changed-roles.outputs.all_changed_and_modified_files }}; do
+              echo "Checking $role"
+              if [ -f roles/$role/molecule/default/molecule.yml ]; then
+                echo "Found molecule.yml in $role"
+                if [ -z "$roles" ]; then
+                  roles="\"$role\""
+                else
+                  roles="$roles, \"$role\""
+                fi
+                echo DEBUG $roles
+              fi
+            done
+            echo DEBUG "matrix_output=[$roles]"
+            echo "matrix_output=[$roles]" >> "$GITHUB_ENV"
+          fi
+          exit 0
+
+  molecule:
+    runs-on: ubuntu-latest
+    needs:
+      - find-molecule
+    strategy:
+      matrix:
+        role: ${{ fromJson(needs.find-molecule.outputs.matrix) }}
+
+    steps:
+      - name: Need all the space we can get here...
+        uses: jlumbroso/free-disk-space@main
+        with:
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: false  # https://github.com/jlumbroso/free-disk-space/issues/4
+          docker-images: true
+          swap-storage: true
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies.
+        working-directory: roles/${{ matrix.role }}
+        run: pip3 install -r requirements.txt
+
+      - name: Install Ansible dependencies.
+        run: ansible-galaxy install -r requirements.yml
+
+      - name: Install Ansible dependencies.
+        working-directory: roles/${{ matrix.role }}
+        run: ansible-galaxy install -r requirements.yml
+
+      - name: Run molecule
+        working-directory: roles/${{ matrix.role }}
+        run: "molecule test"
+
+...
