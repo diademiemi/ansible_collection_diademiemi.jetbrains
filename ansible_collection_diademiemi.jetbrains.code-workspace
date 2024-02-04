@@ -20,14 +20,14 @@
 			"**/requirements.yml": "ansible",
 			"**/terraform/**": "terraform",
 			"**/inventories/terraform/**": "ansible"
-		}
+		},
+		"workbench.iconTheme": "vs-seti"
 	},
 	"extensions": {
 		"recommendations": [
 			"redhat.ansible",
 			"redhat.vscode-yaml",
 			"hashicorp.terraform",
-			"GitHub.copilot-nightly",
 			"GitLab.gitlab-workflow",
 			"yzhang.markdown-all-in-one"
 		]

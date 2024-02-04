@@ -105,3 +105,11 @@ releases:
     fragments:
     - fragment.yml
     release_date: '2023-12-22'
+  8.0.0:
+    changes:
+      major_changes:
+      - add phpstorm, thanks @func0der
+      release_summary: Add phpstorm role
+    fragments:
+    - php.yml
+    release_date: '2024-02-04'

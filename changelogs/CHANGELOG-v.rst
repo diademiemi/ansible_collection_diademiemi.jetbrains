@@ -5,6 +5,19 @@ diademiemi.jetbrains Release Notes
 .. contents:: Topics
 
 
+v8.0.0
+======
+
+Release Summary
+---------------
+
+Add phpstorm role
+
+Major Changes
+-------------
+
+- add phpstorm, thanks @func0der
+
 v7.0.0
 ======
 
