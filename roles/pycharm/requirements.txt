@@ -5,5 +5,5 @@ ansible-compat
 antsibull-changelog
 antsibull-docs
 molecule
-molecule-plugins[podman]
+molecule-plugins[docker]
 jmespath
