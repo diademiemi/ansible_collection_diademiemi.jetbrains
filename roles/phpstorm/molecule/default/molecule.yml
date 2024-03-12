@@ -10,7 +10,7 @@ platforms:
     systemd: true
     tmpfs:
       "/tmp": "rw,exec,mode=1777"
-      "/run": "rw,noexec,nosuid,nodev"
+      "/run": "rw,exec,mode=1777"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     cgroupns_mode: host
@@ -22,7 +22,7 @@ platforms:
     systemd: true
     tmpfs:
       "/tmp": "rw,exec,mode=1777"
-      "/run": "rw,noexec,nosuid,nodev"
+      "/run": "rw,exec,mode=1777"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     cgroupns_mode: host
@@ -34,7 +34,7 @@ platforms:
     systemd: true
     tmpfs:
       "/tmp": "rw,exec,mode=1777"
-      "/run": "rw,noexec,nosuid,nodev"
+      "/run": "rw,exec,mode=1777"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     cgroupns_mode: host
@@ -46,7 +46,7 @@ platforms:
     systemd: true
     tmpfs:
       "/tmp": "rw,exec,mode=1777"
-      "/run": "rw,noexec,nosuid,nodev"
+      "/run": "rw,exec,mode=1777"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     cgroupns_mode: host
@@ -58,7 +58,7 @@ platforms:
     systemd: true
     tmpfs:
       "/tmp": "rw,exec,mode=1777"
-      "/run": "rw,noexec,nosuid,nodev"
+      "/run": "rw,exec,mode=1777"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     cgroupns_mode: host
@@ -70,7 +70,7 @@ platforms:
     systemd: true
     tmpfs:
       "/tmp": "rw,exec,mode=1777"
-      "/run": "rw,noexec,nosuid,nodev"
+      "/run": "rw,exec,mode=1777"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     cgroupns_mode: host
@@ -82,7 +82,7 @@ platforms:
     systemd: true
     tmpfs:
       "/tmp": "rw,exec,mode=1777"
-      "/run": "rw,noexec,nosuid,nodev"
+      "/run": "rw,exec,mode=1777"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     cgroupns_mode: host
@@ -94,7 +94,7 @@ platforms:
     systemd: true
     tmpfs:
       "/tmp": "rw,exec,mode=1777"
-      "/run": "rw,noexec,nosuid,nodev"
+      "/run": "rw,exec,mode=1777"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     cgroupns_mode: host
@@ -106,7 +106,7 @@ platforms:
     systemd: true
     tmpfs:
       "/tmp": "rw,exec,mode=1777"
-      "/run": "rw,noexec,nosuid,nodev"
+      "/run": "rw,exec,mode=1777"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     cgroupns_mode: host
