@@ -14,7 +14,7 @@ on:
 
 jobs:
   find-molecule:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     outputs:
       matrix: ${{ env.matrix_output }}
     steps:
@@ -58,7 +58,7 @@ jobs:
           exit 0
 
   molecule:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs:
       - find-molecule
     strategy:
