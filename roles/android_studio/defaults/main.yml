@@ -1,5 +1,5 @@
 ---
-jetbrains_android_studio_version: "2023.2.1.23"
+jetbrains_android_studio_version: "2023.2.1.25"
 jetbrains_android_studio_plugins: []
 jetbrains_android_studio_plugins_user: "{{ ansible_user_id }}"
 jetbrains_android_studio_plugins_group: "{{ ansible_user_id }}"

@@ -1,5 +1,5 @@
 ---
-jetbrains_clion_version: "2023.3.4"
+jetbrains_clion_version: "2024.1"
 
 jetbrains_clion_plugins: []
 jetbrains_clion_plugins_user: "{{ ansible_user_id }}"
