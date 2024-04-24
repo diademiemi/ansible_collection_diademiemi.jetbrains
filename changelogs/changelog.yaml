@@ -113,3 +113,12 @@ releases:
     fragments:
     - php.yml
     release_date: '2024-02-04'
+  8.0.3:
+    changes:
+      bugfixes:
+      - Fix directory for plugins
+      - Fix extract directory for updating
+      release_summary: Minor bugfixes
+    fragments:
+    - minor.yml
+    release_date: '2024-04-24'

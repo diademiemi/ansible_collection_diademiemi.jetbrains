@@ -5,6 +5,20 @@ diademiemi.jetbrains Release Notes
 .. contents:: Topics
 
 
+v8.0.2
+======
+
+Release Summary
+---------------
+
+Minor bugfixes
+
+Bugfixes
+--------
+
+- Fix directory for plugins
+- Fix extract directory for updating
+
 v8.0.0
 ======
 
