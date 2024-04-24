@@ -23,7 +23,7 @@ jetbrains_common_naming_map:
     comment: "xxxxx Y Edition"
     code: PE
 
-jetbrains_common_plugin_directory: "{{ lookup('env', 'HOME') }}/.local/share/\
+jetbrains_common_plugin_directory: "{{ ansible_user_dir }}/.local/share/\
   {{ jetbrains_common_publisher }}/{{ jetbrains_common_stylized_name }}{{ jetbrains_common_naming_map[jetbrains_common_edition].code | default('') }}\
   {{ jetbrains_common_version | regex_search('\\d{1,}\\.\\d{1,}') }}/"
 
