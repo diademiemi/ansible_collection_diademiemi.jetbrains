@@ -29,7 +29,7 @@
     - name: Create temporary directory to compare versions
       become: true
       ansible.builtin.file:
-        path: "/tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}"
+        path: "/tmp/{{ jetbrains_common_name }}"
         state: directory
         mode: "0755"
         owner: root
@@ -41,7 +41,7 @@
       become: true
       ansible.builtin.unarchive:
         src: /tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}.tar.gz
-        dest: /tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}
+        dest: /tmp/{{ jetbrains_common_name }}
         remote_src: true
         extra_opts:
           - --strip-components=1
@@ -52,7 +52,7 @@
 
     - name: Read product-info.json from downloaded file
       ansible.builtin.slurp:
-        src: "/tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}/product-info.json"
+        src: "/tmp/{{ jetbrains_common_name }}/product-info.json"
       register: jetbrains_common_product_info_json
 
     - name: Parse product-info.json
@@ -62,17 +62,11 @@
     - name: Update installation
       when: jetbrains_common_installed_product_info_version != jetbrains_common_new_product_info_version
       block:
-        - name: Remove old installation
-          become: true
-          ansible.builtin.file:
-            path: "/opt/{{ jetbrains_common_name }}"
-            state: absent
-
         - name: Extract downloaded file
           become: true
           ansible.builtin.unarchive:
             src: /tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}.tar.gz
-            dest: /tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}
+            dest: /tmp/{{ jetbrains_common_name }}
             remote_src: true
             extra_opts:
               - --strip-components=1
@@ -80,8 +74,8 @@
         - name: Copy temporary directory to permanent location
           become: true
           ansible.builtin.copy:
-            src: "/tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}"
-            dest: "/opt/{{ jetbrains_common_name }}"
+            src: "/tmp/{{ jetbrains_common_name }}"
+            dest: "/opt/"
             remote_src: true
             mode: "0755"
             owner: root
@@ -90,7 +84,7 @@
         - name: Remove temporary directory
           become: true
           ansible.builtin.file:
-            path: "/tmp/{{ jetbrains_common_name }}{{ jetbrains_common_edition }}-{{ jetbrains_common_version }}"
+            path: "/tmp/{{ jetbrains_common_name }}"
             state: absent
 
 - name: Perform new install
