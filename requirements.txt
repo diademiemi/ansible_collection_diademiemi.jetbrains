@@ -1,6 +1,6 @@
 yamllint
 ansible-lint
-ansible
+ansible==9.6.1
 ansible-compat
 antsibull-changelog
 antsibull-docs
